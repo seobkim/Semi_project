@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<title>로그인화면</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+div {
+	/*border: 1px solid black;*/
+	box-sizing: border-box;
+}
+
+li {
+	width: 150px;
+	font-size: 1.5em;
+	font-family: sans-serif;
+	/*            "Lucida Console", Courier, monospace;*/
+}
+
+a:hover {
+	text-decoration: none;
+	color: gray;
+	cursor: pointer;
+}
+
+a {
+	color: black;
+}
+
+div.a {
+	float: right;
+}
+
+input {
+	font-size: 20px;
+}
+
+span {
+	font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+	<div class="jumbotron text-center" style = "width: 650px; height: 400px">
+		<div class="container">
+			<h2>LOGIN</h2>
+			<form action="/login" method="post">
+				<input type="text" id="userId" name="userId"
+					placeholder="ID를 입력해주세요 "><br> <br> <input
+					type="password" id="userPwd" name="userPwd"
+					placeholder="비밀번호를 입력해주세요"> <br> <br> <input
+					type="submit" value="login" id="login" style="width: 250px"><br>
+				<br> <span><a id = "searchId" onclick="link(this)">
+						아이디찾기</a> / <a id = "searchPwd" onclick="link(this)">비밀번호찾기</a> / <a
+					id = "join" onclick="link(this)">회원가입</a> </span> <br>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function link(obj) {
+	    switch (obj.id) {
+		case "searchId":
+			location.href = "/views/member/searchId.jsp";
+			break;
+		case "searchPwd":
+			location.href = "/views/member/searchPwd.jsp";
+			break;
+		case "join" :
+			opener.location.href = "/views/member/join.jsp";
+			window.close();
+			break;
+		default:
+			break;
+		}
+	}
+</script>
+</html>
